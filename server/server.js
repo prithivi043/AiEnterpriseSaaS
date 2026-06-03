@@ -38,6 +38,10 @@ app.get("/api/health", (_req, res) => {
   res.json({ status: "ok", platform: "Eaura AI", timestamp: new Date() });
 });
 
+app.get("/", (req, res) => {
+  res.json({ message: "Eaura AI Backend Running" });
+});
+
 // ── Connect DB & Start Server ───────────────────────────
 mongoose
   .connect(process.env.MONGO_URI)
